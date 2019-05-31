@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<!-- главный див -->
+	<div class="main">
+		<!-- блок с подсказками и заработанными деньгами -->
+		<div class="block-one">
+			<div>
+				<!-- блок с подсказками -->
+				<div class="help">
+					<div class="prompt">50:50</div>
+					<div class="prompt">Зал</div>
+					<div class="prompt">Звонок</div>
+				</div>
+				<div>
+					<img src="logo.png">
+				</div>
+			</div>
+			<!-- блок с заработанными деньгами -->
+			<div class="result">
+				<div class="money"><b>15. 3 000 000</b></div>
+				<div class="money">14. 1 500 000</div>
+				<div class="money">13. 800 000</div>
+				<div class="money">12. 400 000</div>
+				<div class="money">11. 200 000</div>
+				<div class="money"><b>10. 100 000</b></div>
+				<div class="money">9. 50 000</div>
+				<div class="money">8. 25 000</div>
+				<div class="money">7. 15 000</div>
+				<div class="money">6. 10 000</div>
+				<div class="money"><b>5. 5 000</b></div>
+				<div class="money">4. 3 000</div>
+				<div class="money">3. 2 000</div>
+				<div class="money">2. 1 000</div>
+				<div class="money">1. 500</div>				
+			</div>
+		</div>
+
+		<!-- блок с 1 вопросом и вариантами ответов -->
+		<div class="block-two">
+			<div class="question">
+				<h2>Как правильно закончить пословицу: "Не откладывай на завтра то, что можно..."?</h2>
+			</div>
+			<div class="answer">
+				<button class="variant rightOne">a) сделать сегодня</button>
+				<button class="variant errorOne">b) сделать послезавтра</button>
+			</div>
+			<div class="answer">
+				<button class="variant errorOne">c) сделать через месяц</button>
+				<button class="variant errorOne">d) никогда не делать</button>
+			</div>			
+		</div>
+		<!-- блок с 2 вопросом и вариантами ответов -->
+		<div class="block-tree">
+			<div class="question">
+				<h2>Что говорит человек, когда замечает нечто необычное?</h2>
+			</div>
+			<div class="answer">
+				<button class="variant errorTwo">a) попало в лоб</button>
+				<button class="variant errorTwo">b) залетело в рот</button>
+			</div>
+			<div class="answer">
+				<button class="variant errorTwo">c) накапало в уши</button>
+				<button class="variant rightTwo">d) бросилось в глаза</button>
+			</div>			
+		</div>
+		<!-- блок с 3 вопросом и вариантами ответов -->
+		<div class="block-four">
+			<div class="question">
+				<h2>Что помогает туристу ориентироваться в незнакомом городе?</h2>
+			</div>
+			<div class="answer">
+				<button class="variant errorTree">a) путепровод</button>
+				<button class="variant errorTree">b) путеукладчик</button>
+			</div>
+			<div class="answer">
+				<button class="variant rightTree">c) путеводитель</button>
+				<button class="variant errorTree">d) путеводная звезда</button>
+			</div>			
+		</div>
+		<!-- блок с 4 вопросом и вариантами ответов -->
+		<div class="block-five">
+			<div class="question">
+				<h2>Какой наряд прославил баснописец Крылов?</h2>
+			</div>
+			<div class="answer">
+				<button class="variant win">a) тришкин кафтан</button>
+				<button class="variant errorFour">b) ивашкин армяк</button>
+			</div>
+			<div class="answer">
+				<button class="variant errorFour">c) прошкин зипун</button>
+				<button class="variant errorFour">d) машкин сарафан</button>
+			</div>			
+		</div>
+	</div>
+	
+	<div class="winText" style="display: none">
+			Ты выиграл!
+	</div>
+	<script type="text/javascript">
+		let rightOne = document.querySelector('.rightOne');
+		let blockFive = document.querySelector('.block-five');
+		let rightTwo = document.querySelector('.rightTwo');
+		let blockTwo = document.querySelector('.block-two');
+		let rightThree = document.querySelector('.rightTree');
+		let blockTree = document.querySelector('.block-tree');
+		let win = document.querySelector('.win');
+		let blockFour = document.querySelector('.block-four');
+		let winText = document.querySelector('.winText')
+		rightOne.onclick = function() 
+		{
+			blockTwo.style.display = 'none';
+			blockTree.style.display = 'block';
+		}
+		rightTwo.onclick = function() 
+		{
+			blockTree.style.display = 'none';
+			blockFour.style.display = 'block';
+		}
+		rightThree.onclick = function() 
+		{
+			blockFour.style.display = 'none';
+			blockFive.style.display = 'block';
+		}
+		win.onclick = function() 
+		{
+			blockFive.style.display = 'none';
+			winText.style.display = 'block'
+		}
+	</script>
+</body>
+</html>
